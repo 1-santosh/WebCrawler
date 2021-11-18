@@ -81,11 +81,11 @@ class Parser(object):
 
                                     }
 
-            notification_recipient_list = ["kailasa.akhil@zs.com", "ankul.jain@zs.com"]
+            notification_recipient_list = ["dummy"]
             print("Creating subject of the mail by replacing paramters")
             ses_client = boto3.client('ses', region_name='us-east-1')
             ses_response = ses_client.send_email(
-                Source="ankul.jain@zs.com",
+                Source="dummy",
                 Destination={'ToAddresses': notification_recipient_list},
                 Message={'Subject': {'Data': email_subject}, 'Body': {'Html': {'Data': email_body}}})
 
@@ -370,11 +370,11 @@ class Parser(object):
         try:
 
             list = file_dict[3]["urls"]
-            reddit = praw.Reddit(client_id='YDLuGeDLGPh1qA',
-                                 client_secret='TpKtE9p_lMX4-3kp9tSFf6fKCCk',
+            reddit = praw.Reddit(client_id='',
+                                 client_secret='',
                                  user_agent='santosh',
                                  username='santoshnalgonda',
-                                 password='zsa@2019')
+                                 password='')
             no_subreddit = reddit.subreddit('all')
             hot = no_subreddit.hot(limit=1000)
             print(hot)
